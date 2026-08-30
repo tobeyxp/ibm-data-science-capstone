@@ -62,6 +62,18 @@ notebooks/   the seven labs, in order
 report/      final report (PDF) and the figures behind it
 ```
 
+## Reproducing the notebooks
+
+```bash
+python -m venv .venv
+python -m pip install -r requirements.txt
+jupyter lab
+```
+
+Run the notebooks in numeric order. The first two call public SpaceX and Wikipedia endpoints, so a fresh execution can differ from the committed course-era results if those external sources change. The committed outputs preserve the analysed snapshot.
+
+CI performs a deterministic integrity check: all seven files must satisfy the notebook v4 core schema (while permitting harmless exporter-added fields) and may not contain committed Python error outputs. It deliberately does not re-run network-dependent coursework on every commit.
+
 ## Stack
 
 Python · pandas · NumPy · scikit-learn · Matplotlib · Seaborn · Folium ·
